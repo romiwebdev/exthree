@@ -1,0 +1,222 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero-bg {
+    background-image: url('https://i.imgur.com/eMfFAW2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.slide-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.slide-up.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+
+.gallery-item {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+#gallery-modal img {
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+#pagination button {
+    transition: all 0.2s ease;
+}
+
+#pagination button:hover:not(.bg-indigo-600) {
+    background-color: #e0e7ff;
+}
+
+/* Gallery Modal Styles */
+#gallery-modal {
+    transition: opacity 0.3s ease;
+}
+
+#modal-image-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+#modal-image-container>div {
+    flex: 0 0 100%;
+}
+
+#gallery-modal img {
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Gallery item hover effect */
+.gallery-item {
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Pagination styles */
+#pagination button {
+    transition: all 0.2s ease;
+    min-width: 20px;
+}
+
+#pagination button:hover:not(.bg-indigo-600) {
+    background-color: #e0e7ff !important;
+}
+
+/* Timeline Styles */
+#prestasi {
+    scroll-margin-top: 2rem;
+}
+
+.structure-connector {
+    position: relative;
+    height: 40px;
+}
+
+.structure-connector::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #a5b4fc;
+}
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dot untuk desktop */
+@media (min-width: 768px) {
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #4f46e5;
+        border: 3px solid #a5b4fc;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+        left: calc(50% - 1px);
+    }
+
+    .timeline-item:nth-child(even)::before {
+        left: calc(50% + 1px);
+    }
+}
+
+/* Card Prestasi */
+#prestasi [class*="bg-"] {
+    transition: transform 0.3s ease;
+}
+
+#prestasi [class*="bg-"]:hover {
+    transform: translateY(-3px);
+}
+
+/* Mobile Timeline */
+#prestasi .md\:hidden .absolute {
+    background: linear-gradient(to bottom, #a5b4fc, #c7d2fe);
+}
+
+/* Prestasi Card Mobile */
+#prestasi .bg-white {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#prestasi .bg-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi */
+.slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dot connector for mobile */
+@media (max-width: 767px) {
+    #prestasi .relative::before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 24px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #4f46e5;
+        border: 2px solid #c7d2fe;
+    }
+}
